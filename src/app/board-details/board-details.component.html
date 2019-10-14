@@ -1,0 +1,12 @@
+<body>
+  <div class="flex-row-container">
+    <div class="flex-row-item" *ngIf="!value">{{ value }}</div>
+    <div class="flex-row-item" status="success" *ngIf="value == 'X'">{{ value }}</div>
+    <div class="flex-row-item" status="info" *ngIf="value == 'O'">{{ value }}</div>
+  </div>
+</body>
+
+
+
+
+

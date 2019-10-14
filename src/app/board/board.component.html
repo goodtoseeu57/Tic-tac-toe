@@ -1,0 +1,27 @@
+<mat-card class="mat-card">
+	<mat-card-title *ngIf="!gameOver"> {{currentPlayer.name}} </mat-card-title>
+	<mat-card-subtitle *ngIf="gameOver && lastWinner == PLAYER_HUMAN"> Player 1 wins  </mat-card-subtitle>
+  <mat-card-subtitle *ngIf="gameOver && lastWinner == PLAYER_COMPUTER"> Player 2 wins  </mat-card-subtitle>
+</mat-card>
+
+
+
+<div id="board" >
+  <div *ngFor="let square of board"
+       class="square"
+       [class.checked]="square.value != ''"
+       [class.winner]="square.winner"
+       (click)="square_click(this.square)">
+    {{ square.value }}
+  </div>
+</div>
+
+<mat-card class="mat-card-bottom">
+  <mat-card-subtitle >
+    <button mat-raised-button *ngIf="gameOver" (click)="pageReload()"> Start a new Game </button>
+  </mat-card-subtitle>
+
+</mat-card>
+
+
+
